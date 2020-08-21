@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import {Informacion} from './screens/Informacion';
+import {Encuestas} from './screens/Encuestas';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from '@react-navigation/stack';
@@ -26,6 +27,19 @@ function TabHome(){
         )      
        }}
        ></Tab.Screen>
+       <Tab.Screen 
+          name="EncuestasScreen"
+         component={Encuestas}
+         options={{
+          tabBarLabel:"Encuestas",
+          tabBarIcon:()=>(
+          <Icon
+          name='user'
+          size={32}
+          color="skyblue"/>
+        )      
+       }}
+       ></Tab.Screen>
 
     </Tab.Navigator>
   )
@@ -38,6 +52,7 @@ function TabHome(){
         <Stack.Navigator initialRouteName="TabHomeScreen">
           <Stack.Screen name="TabHomeScreen" component={TabHome}></Stack.Screen>
           <Stack.Screen name="InformacionScreen" component={Informacion}></Stack.Screen>
+          <Stack.Screen name="EncuestasScreen" component={Encuestas}></Stack.Screen>
           
           
           
