@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import {Informacion} from './screens/Informacion';
+import {Registro} from './screens/Registro';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from '@react-navigation/stack';
@@ -26,21 +27,30 @@ function TabHome(){
         )      
        }}
        ></Tab.Screen>
-
+       <Tab.Screen 
+      name="RegistroScreen"
+         component={Registro}
+         options={{
+          tabBarLabel:"Registro",
+          tabBarIcon:()=>(
+          <Icon
+          name='user'
+          size={32}
+          color="skyblue"/>
+        )      
+       }}
+       ></Tab.Screen>
     </Tab.Navigator>
-  )
-  
+  ) 
   }
-  
+
   export default function App() {
     return (
       <NavigationContainer>
         <Stack.Navigator initialRouteName="TabHomeScreen">
           <Stack.Screen name="TabHomeScreen" component={TabHome}></Stack.Screen>
           <Stack.Screen name="InformacionScreen" component={Informacion}></Stack.Screen>
-          
-          
-          
+          <Stack.Screen name="RegistroScreen" component={Registro}></Stack.Screen>
           </Stack.Navigator>
       </NavigationContainer>
     );
