@@ -1,7 +1,7 @@
 import firebase from "firebase";
 import "@firebase/firestore";
 
-export const cargarConfiguracion = () => {
+export const cargarConfiguracion=()=> {
   console.log("Cargando Configuración");
   const firebaseConfig = {
     apiKey: "AIzaSyC8Q9IeOZU1PPSlpY2PwGRnEAeaRPxiTHw",
