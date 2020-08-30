@@ -1,13 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import {Informacion} from './screens/Informacion';
-import {Registro} from './screens/Registro';
-import {Encuestas} from './screens/Encuestas';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/Entypo';
+import {Informacion} from './screens/Informacion';
+import {Registro} from './screens/Registro';
+import {Encuestas} from './screens/Encuestas';
+import { cargarConfiguracion } from "./utils/conexion"
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -61,6 +62,9 @@ function TabHome(){
   }
 
   export default function App() {
+    if(!global.estaCargado){
+      cargarConfiguracion();
+    };
     return (
       <NavigationContainer>
           <Stack.Navigator initialRouteName="TabHomeScreen">
