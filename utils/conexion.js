@@ -10,10 +10,11 @@ export const cargarConfiguracion=()=> {
     projectId: "imparables-2f443",
     storageBucket: "imparables-2f443.appspot.com",
     messagingSenderId: "336319665066",
-    appId: "1:336319665066:web:10772e5264a795429791d3",
+    appId: "1:336319665066:web:10772e5264a795429791d3"
   };
 
   firebaseApp = firebase.initializeApp(firebaseConfig);
   global.bdd = firebase.firestore();
   global.estaCargado = true;
+  
 };
